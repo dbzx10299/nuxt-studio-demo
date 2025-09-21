@@ -7,5 +7,10 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/foo': { prerender: true },
     '/blog': { prerender: true }
+  },
+  content: {
+    preview: {
+      api: 'https://nuxt-studio-demo.netlify.app/'
+    }
   }
 })
