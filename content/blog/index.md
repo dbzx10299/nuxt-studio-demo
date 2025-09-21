@@ -1,5 +1,5 @@
-# My First Page
-
 [homepage](/)
+
+# My First Page
 
 Here is some content.
