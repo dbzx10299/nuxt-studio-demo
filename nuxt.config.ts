@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   content: {
     preview: {
-      api: 'https://nuxt-studio-demo.netlify.app/',
+      api: 'https://api.nuxt.studio',
       gitInfo: {
         name: 'nuxt-studio-demo',
         owner: 'dbzx10299',
