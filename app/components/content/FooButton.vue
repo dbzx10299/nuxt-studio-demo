@@ -1,7 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{
-  type?: 'primary' | 'secondary'
-}>()
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'primary',
+    validator: (v) => ['primary', 'secondary'].includes(v),
+  },
+})
 
 function handleClick() {
   console.log('clickedd')
