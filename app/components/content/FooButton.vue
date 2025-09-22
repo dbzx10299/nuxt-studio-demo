@@ -4,7 +4,7 @@ const props = defineProps<{
 }>()
 
 function handleClick() {
-  console.log('clicked')
+  console.log('clickedd')
 }
 </script>
 
