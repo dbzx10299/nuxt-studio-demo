@@ -12,5 +12,8 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://nuxt-studio-demo.netlify.app/'
     }
+  },
+  nitro: {
+    preset: 'netlify'
   }
 })
