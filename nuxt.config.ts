@@ -1,4 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import fg from 'fast-glob'
+import { fileURLToPath } from 'node:url'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
@@ -20,5 +22,21 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'netlify'
+  },
+  hooks: {
+    async 'nitro:config'(nitroConfig) {
+      const dirs = await fg('content/blog/**/.meta/imgs/**', {
+        dot: true,
+        onlyDirectories: true
+      })
+
+      for (const dir of dirs) {
+        nitroConfig.publicAssets?.push({
+          baseURL: '/',
+          dir: fileURLToPath(new URL(dir, import.meta.url)),
+          maxAge: 60 * 60 * 24 * 7
+        })
+      }
+    }
   }
 })
